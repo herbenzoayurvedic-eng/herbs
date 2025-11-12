@@ -155,6 +155,7 @@ const HerbDetails = ({ herb: propsHerb }) => {
     if (!herb) return [];
     const list = [
       { id: "introduction", title: "Introduction", content: herb.Introduction },
+      { id: "api", title: "Active Pharmaceutical Ingredient", content: herb.Active_Pharmaceutical_Ingredient },
       { id: "background", title: "Background & Traditional Use", content: herb.Background_and_Traditional_Use },
       { id: "constituents", title: "Active Constituents", content: herb.Active_Constituents },
       { id: "mechanism", title: "Mechanism of Action", content: herb.Mechanism_of_Action },
@@ -165,7 +166,6 @@ const HerbDetails = ({ herb: propsHerb }) => {
       { id: "interactions", title: "Drug Interactions", content: herb.Drug_Interactions },
       { id: "usage", title: "Seasonal Usage", content: herb.Seasonal_Usage },
       { id: "dosage", title: "Recommended Dosage", content: herb.Recommended_Dosage },
-      { id: "api", title: "Active Pharmaceutical Ingredient", content: herb.Active_Pharmaceutical_Ingredient },
       { id: "references", title: "References", content: herb.References },
     ];
     return list.filter((s) => (

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import HerbCard from '../components/HerbCard';
+import SearchHeader from '../components/SearchHeader';
 import { API_ENDPOINTS } from '../config/api';
 
 const Home = () => {
@@ -61,13 +62,9 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">Herbs Collection</h1>
-          <p className="text-gray-600">Explore Traditional Medicinal Herbs</p>
-        </div>
-
+    <div className="min-h-screen bg-gray-50">
+      <SearchHeader herbs={herbs} />
+      <div className="container mx-auto px-4 py-8">
         {herbs.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-gray-600 text-lg">No herbs found.</p>

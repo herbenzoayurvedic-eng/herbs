@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useMemo, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
+import { API_ENDPOINTS } from "../config/api";
 
 const defaultAuthor = {
   name: "Author Name",
@@ -45,7 +46,7 @@ function useHerbData(propsHerb) {
       if (!slug || propsHerb) return;
       setState((s) => ({ ...s, loading: true, error: null }));
       try {
-        const res = await fetch(`http://localhost:5000/api/herbs/slug/${encodeURIComponent(slug)}`);
+        const res = await fetch(API_ENDPOINTS.HERB_BY_SLUG(slug));
         if (!res.ok) throw new Error(`Failed to load herb: ${res.status}`);
         const data = await res.json();
         if (!isMounted) return;

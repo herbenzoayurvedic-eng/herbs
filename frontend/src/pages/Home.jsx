@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import HerbCard from '../components/HerbCard';
+import { API_ENDPOINTS } from '../config/api';
 
 const Home = () => {
   const [herbs, setHerbs] = useState([]);
@@ -15,7 +16,7 @@ const Home = () => {
       setLoading(true);
       setError(null);
 
-      const response = await fetch('http://localhost:5000/api/herbs');
+      const response = await fetch(API_ENDPOINTS.HERBS);
       if (!response.ok) {
         throw new Error('Failed to fetch herbs');
       }
